@@ -1,13 +1,14 @@
 import { SignedIn, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 
 import Header from "@/components/Header";
 import AddDocumentBtn from "@/components/AddDocumentBtn";
+import { DeleteModal } from "@/components/DeleteModal";
 
 import { getDocuments } from "@/lib/actions/room.actions";
-import Link from "next/link";
 import { dateConverter } from "@/lib/utils";
 
 const Home = async () => {
@@ -59,6 +60,7 @@ const Home = async () => {
                     </p>
                   </div>
                 </Link>
+                <DeleteModal roomId={id} />
               </li>
             ))}
           </ul>
