@@ -34,7 +34,6 @@ const Document = async ({ params: { id } }: SearchParamProps) => {
     ? "editor"
     : "viewer";
 
-  // TODO: Assess the permissions of the user for read / edit access
   return (
     <main className="flex w-full flex-col items-center">
       <CollaborativeRoom
